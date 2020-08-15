@@ -28,6 +28,7 @@ function loadImage(url) {
     })
 }
 
+
 export {
     to2Digit,
     randomColor,

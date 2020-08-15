@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 class SignUpForm extends Component {
     constructor(props) {
@@ -61,7 +62,7 @@ class SignUpForm extends Component {
             <span className="input-item__password-header">(Tối thiểu 8 ký tự)</span>
                                 </label>
                                 <div className="input-item__wrapper">
-                                    <input type="text" placeholder="Mật khẩu" />
+                                    <input type="password" placeholder="Mật khẩu" />
                                     <span>
                                         <i className="fas fa-lock" />
                                     </span>
@@ -74,7 +75,7 @@ class SignUpForm extends Component {
                                     Xác nhận mật khẩu mới
           </label>
                                 <div className="input-item__wrapper">
-                                    <input type="text" />
+                                    <input type="password" />
                                     <span>
                                         <i className="fas fa-lock" />
                                     </span>
@@ -88,7 +89,7 @@ class SignUpForm extends Component {
                         <button className="btn bold">Đăng ký</button>
                         <div className="account__btn-sign-in">
                             Bạn đã có tài khoản TTBStay?
-        <span className="btn-sign-in__text bold" style={{ cursor: 'pointer' }}>Đăng nhập</span>
+        <Link to="/sign-in" className="btn-sign-in__text bold" style={{ cursor: 'pointer' }}>Đăng nhập</Link>
                         </div>
                     </div>
                 </div>

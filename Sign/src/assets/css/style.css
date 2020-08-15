@@ -155,7 +155,7 @@
     }
     .input-item__wrapper i{
         position: absolute;
-        right: 1.15rem;
+        right: 3.15rem;
         top: 1rem;
     }
     .input-item__password-header{
@@ -240,6 +240,9 @@
 /* ================================== 6, Sign-in ================================== */
     .sign-in .sign-in__title{
 
+    }
+    .sign .account .account__btn button:focus{
+        box-shadow: none;
     }
 
   

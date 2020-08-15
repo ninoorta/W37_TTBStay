@@ -1,8 +1,67 @@
 import React, { Component } from 'react'
+import btnSignIn from '../../pieces/ButtonSignIn';
+import axios from 'axios'
+import { Link, withRouter } from 'react-router-dom'
 
 class SignInForm extends Component {
     constructor(props) {
         super(props)
+
+        this.signIn = this.signIn.bind(this)
+    }
+
+    signIn() {
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        console.log(email, password)
+
+        axios({
+            url: 'http://localhost:9000/api/auth/sign-in',
+            method: "POST",
+            headers: {},
+            data: {
+                email: email,
+                password: password
+            }
+        }).then(res => {
+            if(res.data.familyName == undefined){
+                res.data.familyName = '';
+            }
+            let userName = res.data.familyName + " " + res.data.name
+            this.setState({
+                name: userName
+            })
+            // If data is valid , we will redirect to home page 
+            this.props.history.push('/')
+            console.log(this.state)
+            document.getElementById("nav-right").innerHTML = this.state.name
+            document.getElementById("nav-right").style.color = "#f65e39"
+            document.getElementById("nav-right").style.fontSize = "xx-large"
+
+        }).catch(err => {
+            console.log('catch err request')
+            console.log(err, err.response)
+            let errMessage = err.response.data.message
+            // If have email, put email-error display none
+            if(email){
+                document.getElementById("email-error").style.display = "none";
+            } else if(password){
+                document.getElementById("password-error").style.display = "block";
+            }
+            //  Else
+            if(!email){
+                document.getElementById("email-error").innerHTML = errMessage
+                console.log(errMessage)
+                document.getElementById("email-error").style.display = "block";
+            } else if(!password){
+                document.getElementById("password-error").innerHTML = errMessage
+                document.getElementById("password-error").style.display = "block";
+            }
+
+        })
+
+        // console.log("clicked")
+
     }
 
     
@@ -19,36 +78,38 @@ class SignInForm extends Component {
                                     Địa chỉ email
                     </label>
                                 <div className="input-item__wrapper">
-                                    <input type="text" placeholder="Địa chỉ email" />
+                                    <input type="email" placeholder="Địa chỉ email" id="email" required="required" />
                                     <span>
                                         <i className="far fa-envelope" />
                                     </span>
-                                    <div className="input-item__error email">
+                                    <div className="input-item__error email" id="email-error">
                                     </div>
                                 </div>
                             </div>
                             <div className="sign-in__input-item sign__input-item">
                                 <label className="bold">
                                     Mật khẩu
-                      <span className="input-item__password-header">(Tối thiểu 8 ký tự)</span>
+                      <span className="input-item__password-header">(Tối thiểu 6 ký tự)</span>
                                 </label>
                                 <div className="input-item__wrapper">
-                                    <input type="text" placeholder="Mật khẩu" />
+                                    <input type="password" placeholder="Mật khẩu" id="password" required="required"/>
                                     <span>
                                         <i className="fas fa-lock" />
                                     </span>
-                                    <div className="input-item__error password">
+                                    <div className="input-item__error password" id="password-error">
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </form>
                     <div className="account__btn">
-                        <button className="btn bold">Đăng nhập</button>
+                        <button onClick={this.signIn} className="btn bold">Đăng nhập</button>
                         <div className="account__btn-sign-in">
                             Bạn chưa có tài khoản TTBStay?
-                  <span className="btn-sign-in__text bold" style={{ cursor: 'pointer' }}>Đăng ký</span>
+                  <Link to="/sign-up" className="btn-sign-in__text bold" style={{ cursor: 'pointer' }} >Đăng ký</Link>
                         </div>
+                        {/* <div><button
+                            onClick={() => this.props.history.push('/sign-up')}>Go</button></div> */}
                     </div>
                 </div>
             </div>
@@ -56,4 +117,4 @@ class SignInForm extends Component {
     }
 }
 
-export default SignInForm
+export default withRouter(SignInForm)

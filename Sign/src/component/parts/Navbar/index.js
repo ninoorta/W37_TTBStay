@@ -16,7 +16,7 @@ class Navbar extends Component {
                                 TTBStay
                             </Link>
                         </div>
-                        <ul className="header__menu-list">
+                        <ul className="header__menu-list" id="nav-right">
                             <li className="menu__list-item">
                                 <Link to="/sign-up" className="list-item__link bold">Đăng kí</Link>
                             </li>

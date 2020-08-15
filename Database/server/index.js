@@ -13,7 +13,6 @@ const port = process.env.PORT || 9000
 
 const routes = require('./routes')
 const { readTokenMiddleware, authenticatedMiddleware } = require('./modules/auth')
-
 app.use(cors)
 app.use(bodyParser.json())
 app.use(session({
