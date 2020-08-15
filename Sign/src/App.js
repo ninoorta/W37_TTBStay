@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import MainNav from './component/parts/MainNav'
+// import MainNav from './component/parts/MainNav'
+import Navbar from './component/parts/Navbar/index'
 import Routes from './Routes'
 
 class App extends Component {
@@ -8,7 +9,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div className="app">
-                    <MainNav />
+                    <Navbar />
                     <Routes />
                 </div>
             </BrowserRouter>

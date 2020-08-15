@@ -21,6 +21,14 @@ const schema = new mongoose.Schema({
         type: String,
         required: true
     },
+    phone: {
+        type: String,
+        required: true
+    },
+    familyName: {
+        type: String,
+        required: true
+    },
     birthdate: Date,
     state: {
         type: String,

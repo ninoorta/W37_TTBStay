@@ -1,0 +1,245 @@
+    /* 
+    Theme name: Sign
+
+    ================================== TABLE OF CONTENTS ==================================
+    1, Reset Css
+    2, Navbar
+    3, Banner
+    4, Sign-up
+    5, Footer
+    6, Sign-in
+
+
+
+    */
+
+    /* ================================== 1, Reset Css ================================== */
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    a{
+        text-decoration: none;
+    }
+    ul li {
+        list-style: none;
+    }
+    img{
+        display: block;
+        vertical-align: middle;
+    }
+    .bold{
+        font-weight: 700;
+    }
+    input::placeholder{
+        font-size: 0.9rem;
+        line-height: 0.9rem;
+    }
+
+
+
+    /* ================================== 2, Header ================================== */
+    .header{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80px;
+    }
+    .header__menu{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header__menu-logo .menu-logo__link{
+        font-size: 2rem;
+    }
+
+    .header__menu-logo .menu-logo__link:hover{
+
+    }
+
+
+    .header__menu-list{
+        display: flex;
+        margin-bottom: 0;
+        flex-wrap: wrap;
+    }
+
+    .menu__list-item{
+        margin-left: 2rem;
+    }
+
+    .list-item__link, .header__menu-logo .menu-logo__link{
+        color: #222;
+    }
+
+    .list-item__link:hover, .header__menu-logo .menu-logo__link:hover{
+        color: #f65e39;
+        text-decoration: none;
+    }
+
+
+    /* ================================== 3, Banner ================================== */
+    .banner{
+        padding: 3rem 0;
+        background: linear-gradient(90deg,#f65e38 0,#f68a39 51%,#f65e38);
+        color: #fff;
+    }
+
+    .banner .banner__title{
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        margin-bottom: .625rem;
+    }
+    .banner .banner__text{
+        font-size: 1.125rem;
+    }
+
+    /* ================================== 4, Sign-up ================================== */
+    .sign{
+        margin-bottom: 3rem;
+    }
+    .sign .pros{
+        margin-top: 3rem;
+    }
+    .sign .pros img{
+        max-width: 100%;
+    }
+    .sign .pros .pros__title{
+        margin: 1.5rem 0 .875rem;
+        font-size: 1.125rem;
+        font-weight: 700;
+    }
+    .sign .pros .pros__text{
+        color: #555;
+    }
+
+    .sign .account{
+        padding: 2rem;
+        margin-top: -6.875rem;
+        background: #fff;
+        box-shadow: 0 9px 46px 8px rgba(0,0,0,.02), 0 24px 38px 3px rgba(0,0,0,.04), 0 11px 15px -7px rgba(0,0,0,.05);
+        border-radius: .625rem;
+    }
+
+    .sign-up .account .account__sign-up .sign-up__title{
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        font-weight: 700;
+        text-align: left;
+    }
+
+    .sign__input-item{
+        margin: 1rem 0;
+    }
+
+    .sign__input-item input{
+        border-radius: 3rem;
+        padding: 0.5rem 1.25rem;
+        width: 100%;
+        height: 3rem;
+        border: 0.05rem solid #e6e6e6;
+        transition: all .3s;
+        font-size: 1rem;
+    }
+    .input-item__wrapper{
+        position: relative;
+    }
+
+    .input-item__wrapper input:focus{
+        outline: 0;
+        border-color: #f65e39;
+        box-shadow: 0 0 5px 0 rgba(246,94,57,.5);
+    }
+    .input-item__wrapper i{
+        position: absolute;
+        right: 1.15rem;
+        top: 1rem;
+    }
+    .input-item__password-header{
+        color: #999;
+        font-size: 0.9rem;
+    }
+
+    .input-item__wrapper .fa-lock{
+        color: #8f8f8f;
+    }
+
+    .sign .input-item__error{
+        color: #f65e39;
+        margin-top: 0.5rem;
+    }
+
+    .account__btn{
+        margin: 2rem 0;
+        text-align: center;
+    }
+
+    .account__btn button{
+        box-shadow: 0 4px 12px 0 rgba(246,116,57,.4);
+        background-image: linear-gradient(90deg,#f65e38 0,#f68a39 51%,#f65e38);
+        background-size: 200% auto;
+        border-radius: 3rem;
+        width: 100%;
+        text-align: center;
+        padding: 0 1.875rem;
+        height: 3.5rem;
+        line-height: 3.5rem;
+        color: #fff;
+        transition: all 0.3s
+    }
+
+    .account__btn button:hover{
+        background-position: 100%;
+        color: #fff;
+    }
+
+    .account__btn-sign-in{
+        margin: 2rem 0;
+    }
+    .account__btn-sign-in .btn-sign-in__text{
+        color: #f65e39;
+    }
+
+/* ================================== Media queries for Sign up ================================== */
+
+    @media screen and (max-width:992px){
+        .sign .sign__left{
+            display: none;
+        }
+        .sign .account {
+            margin-top: -1.5rem;
+        }
+    }
+
+    @media screen and (max-width:426px){
+        .sign .account {
+            margin-top: -2.5rem;
+        }
+        .banner .banner__title {
+            font-size: 1.2rem;
+        }
+        .banner .banner__text {
+            font-size: 1rem;
+        }
+    }
+
+/* ================================== 5, Footer ================================== */
+    .footer{
+        padding: 1.5rem 0;
+        margin-top: 5rem;
+        border-top: 0.1rem solid #f2f2f2;
+    }
+    .footer__text{
+        color: #999;
+    }
+
+
+/* ================================== 6, Sign-in ================================== */
+    .sign-in .sign-in__title{
+
+    }
+
+  

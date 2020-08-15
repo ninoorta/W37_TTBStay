@@ -9,7 +9,7 @@ const handlers = {
     async signIn(req, res, next) {
         try {
             let data = req.body
-            let { email, password } = data
+            let { email, password  } = data
 
             if (!email) {
                 throw new Error(`Missing 'email'!`)
