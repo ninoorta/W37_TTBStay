@@ -31,10 +31,25 @@ function verifyToken(token) {
     return jwt.verify(token, JWT_SECRET)
 }
 
+
+function checkValidPhoneNumber(phoneNumber){
+    let valid = /((09|01[2|6|8|9])+([0-9]{8}))|((03[2|3|5|6|7|8|9]|08[1|2|3|4|5]|07[0|6|7|8|9])+([0-9]{7}))\b\b/g
+    return valid.test(phoneNumber)
+    
+}
+
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+
 module.exports = {
     hashMd5,
     signToken,
-    verifyToken
+    verifyToken,
+    checkValidPhoneNumber,
+    validateEmail
 }
 
 

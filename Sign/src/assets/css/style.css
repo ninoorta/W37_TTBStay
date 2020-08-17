@@ -22,12 +22,15 @@
     a{
         text-decoration: none;
     }
+    a:hover{
+        text-decoration: none !important;
+    }
     ul li {
         list-style: none;
     }
     img{
         display: block;
-        vertical-align: middle;
+        width: auto;
     }
     .bold{
         font-weight: 700;
@@ -45,6 +48,7 @@
         justify-content: center;
         align-items: center;
         height: 80px;
+        padding: 0 2rem;
     }
     .header__menu{
         display: flex;
@@ -80,6 +84,17 @@
         text-decoration: none;
     }
 
+    .navbar-toggler, .navbar-collapse{
+        display: none;
+    }
+    @media screen and (max-width: 991px){
+        .header__menu-list{
+            display: none;
+        }
+        .navbar-toggler, .navbar-collapse{
+            display: block;
+        }
+    }
 
     /* ================================== 3, Banner ================================== */
     .banner{
@@ -245,4 +260,98 @@
         box-shadow: none;
     }
 
+
+
+/* ================================== 7, Favorite Slider ================================== */
+    .favorite{
+        padding: 3rem 2rem;
+    }
+    .item__link-wrapper{
+        position: relative;
+    }
+
+    .favorite .favorite__title{
+        margin-bottom: 1.5rem;
+    }
+
   
+    .link-wrapper__info{
+        position: absolute;
+        display: flex;
+        /* justify-content: center; */
+        bottom: 1rem;
+        /* align-items: flex-end; */
+        flex-direction: column;
+        text-align: center;
+        left: 2rem;
+        color: #fff;
+        text-align: left;
+    }
+    
+
+    .wrapper__info-title{
+        color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .item__link-wrapper img{
+        border-radius: 0.25rem;
+    }
+
+/* ================================== 8, Rooms ================================== */
+    .rooms{
+        padding: 0 2rem;
+    }
+    .rooms img{
+        width: 100%;
+        border-radius: 0.25rem;
+    }
+    .rooms .rooms__item{
+        transition: all 0.3s;
+    }
+    .rooms .rooms__item:hover{
+        -webkit-box-shadow: 10px 10px 40px -4px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 40px -4px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 40px -4px rgba(0,0,0,0.75);
+        transform: scale(1.01)
+
+    }
+    .rooms .rooms__heading{
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+    
+    .rooms .item-link__content{
+        margin-top: 1rem;
+        color: #222;
+    }
+    .item-link__content .link__content-name{
+        font-size: 1.25rem;
+    }
+
+    .rooms__item-link:hover .link__content-name{
+        color: #f65e39;
+    }
+
+    .rooms .rooms__pagination{
+        margin-top: 2.5rem;
+    }
+
+    .rooms .page-link{
+        border: none ;
+        color: #222;
+    }
+    .rooms .page-item.active .page-link {
+        color: #fff;
+        background-color: #f65e39 ;
+        border-radius: 50%;
+        text-align: center;
+    }
+    .rooms .page-item .page-link:hover{
+        background-color: #fff;
+        color: #f65e38;
+    }
+    .rooms .page-item.active .page-link:hover{
+        color: #fff;
+        background-color: #f65e39 ;
+    }

@@ -13,7 +13,7 @@ class SignInForm extends Component {
     signIn() {
         let email = document.getElementById("email").value;
         let password = document.getElementById("password").value;
-        console.log(email, password)
+        localStorage.removeItem('loggedIn')
 
         axios({
             url: 'http://localhost:9000/api/auth/sign-in',
@@ -34,19 +34,21 @@ class SignInForm extends Component {
             // If data is valid , we will redirect to home page 
             this.props.history.push('/')
             console.log(this.state)
-            document.getElementById("nav-right").innerHTML = this.state.name
-            document.getElementById("nav-right").style.color = "#f65e39"
-            document.getElementById("nav-right").style.fontSize = "xx-large"
+            localStorage.setItem('loggedIn', userName)
+            
+            // document.getElementById("nav-right").innerHTML = "Welcome " + this.state.name
+            // document.getElementById("nav-right").style.color = "#f65e39"
+            // document.getElementById("nav-right").style.fontSize = "xx-large"
 
         }).catch(err => {
             console.log('catch err request')
             console.log(err, err.response)
             let errMessage = err.response.data.message
             // If have email, put email-error display none
-            if(email){
+            if(email && errMessage.indexOf("email") == -1){
                 document.getElementById("email-error").style.display = "none";
-            } else if(password){
-                document.getElementById("password-error").style.display = "block";
+            } else if(password && errMessage.indexOf("password") == -1){
+                document.getElementById("password-error").style.display = "none";
             }
             //  Else
             if(!email){

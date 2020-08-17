@@ -2,14 +2,16 @@ const userModel = require('./model')
 const {
     hashMd5,
     signToken,
-    verifyToken
+    verifyToken,
+    checkValidPhoneNumber,
+    validateEmail
 } = require('../utils')
 
 const handlers = {
     async signIn(req, res, next) {
         try {
             let data = req.body
-            let { email, password  } = data
+            let { email, password } = data
 
             if (!email) {
                 throw new Error(`Missing 'email'!`)
@@ -42,10 +44,30 @@ const handlers = {
             next(err)
         }
     },
-    async signUp(req, res, next) {
+
+    async signUp(req, res , next) {
         try {
             let data = req.body
+            console.log(data)
+            // Check Email
+            let checkEmail = validateEmail(data.email)
+            if (checkEmail == false) {
+                throw new Error('Invalid email')
+            }
 
+            // Check Phone number
+            let checkPhoneNumber = checkValidPhoneNumber(data.phone)
+            if (checkPhoneNumber == false) {
+                throw new Error('Invalid phone number')
+            }
+
+            // Check name
+            if (typeof data.name != 'string' || data.name == "") {
+                throw new Error('Invalid name')
+            }
+ 
+
+            // Check Password
             if (typeof data.password != 'string'
                 || !(data.password.length >= 6 && data.password.length <= 30)) {
                 throw new Error('Invalid password! Password length should be between 6 and 30!')
@@ -63,7 +85,10 @@ const handlers = {
         } catch (err) {
             next(err)
         }
+
+
     },
+
     async readTokenMiddleware(req, res, next) {
         try {
             let accessToken = req.headers.authorization
@@ -74,12 +99,12 @@ const handlers = {
             next()
         } catch (err) {
             next(new Error('Invalid access token!'))
-        }       
+        }
     },
     async authenticatedMiddleware(req, res, next) {
         try {
             let user = req.user
-            if(!user || !user._id){
+            if (!user || !user._id) {
                 throw new Error('Unauthenticated!')
             }
             next()
