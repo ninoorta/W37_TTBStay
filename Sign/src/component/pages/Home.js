@@ -26,6 +26,7 @@ class Home extends Component {
             items: 5,
             margin: 20,
             dots: true,
+            dotsEach: true,
             // stagePadding: 30
             responsive: {
                 0:{
@@ -33,6 +34,9 @@ class Home extends Component {
                 },
                 768:{
                     items:3,
+                },
+                1024:{
+                    items: 4
                 }
             }
         });
@@ -142,7 +146,7 @@ class Home extends Component {
                     <div className="container-fluid">
                         <div className="row">
                             <h2 className="col-12 rooms__heading">Các homestay nổi bật tại TTBStay</h2>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">
@@ -174,7 +178,7 @@ class Home extends Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">
@@ -206,7 +210,7 @@ class Home extends Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">
@@ -238,7 +242,7 @@ class Home extends Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">
@@ -270,7 +274,7 @@ class Home extends Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">
@@ -302,7 +306,7 @@ class Home extends Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">
@@ -334,7 +338,7 @@ class Home extends Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">
@@ -366,7 +370,7 @@ class Home extends Component {
                                     </a>
                                 </div>
                             </div>
-                            <div className="col-lg-3 col-6 mt-5 mb-2">
+                            <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
                                     <a href="#" className="rooms__item-link">
                                         <div className="item-link__img">

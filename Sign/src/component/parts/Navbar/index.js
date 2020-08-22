@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Navbar extends Component {
     constructor(props) {
@@ -44,20 +44,22 @@ class Navbar extends Component {
                         {loggedIn ? (
                             <ul className="header__menu-list" id="nav-right">
                                 <li className="menu__list-item">
-                                     {"Welcome " + localStorage.getItem("loggedIn")}
-                                    <button className="btn btn-outline-warning btn-sign-out ml-2" onClick={() => this.logOut()}>Log out</button>
+                                    {"Welcome " + localStorage.getItem("loggedIn")}
+                                    <button className="btn btn-sign-out ml-2" onClick={() => this.logOut()}>
+                                        <i class="fas fa-sign-out-alt"></i>
+                                    </button>
                                 </li>
                             </ul>
                         ) : (
-                            <ul className="header__menu-list" id="nav-right">
-                                <li className="menu__list-item">
-                                    <Link to="/sign-up" className="list-item__link bold">Đăng kí</Link>
-                                </li>
-                                <li className="menu__list-item">
-                                    <Link to="/sign-in" className="list-item__link bold">Đăng nhập</Link>
-                                </li>
-                            </ul>
-                        )}
+                                <ul className="header__menu-list" id="nav-right">
+                                    <li className="menu__list-item">
+                                        <Link to="/sign-up" className="list-item__link bold">Đăng kí</Link>
+                                    </li>
+                                    <li className="menu__list-item">
+                                        <Link to="/sign-in" className="list-item__link bold">Đăng nhập</Link>
+                                    </li>
+                                </ul>
+                            )}
                     </div>
                 </div>
             </nav>
