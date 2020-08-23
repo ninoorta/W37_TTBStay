@@ -3,24 +3,28 @@ import { Switch, Route } from 'react-router-dom'
 import Home from './component/pages/Home'
 import Signup from './component/pages/SignUp'
 import Signin from './component/pages/SignIn'
+import Detail from './component/pages/Detail'
 
 class Routes extends Component {
     constructor(props) {
         super(props)
     }
-    
-    
+
+
     render() {
         return (
             <Switch>
+                <Route exact path="/detail">
+                    <Detail />
+                </Route>
                 <Route exact path="/sign-up">
-                    <Signup/>
+                    <Signup />
                 </Route>
                 <Route exact path="/sign-in">
-                    <Signin/>
+                    <Signin />
                 </Route>
                 <Route exact path="/">
-                    <Home/>
+                    <Home />
                 </Route>
             </Switch>
         )
@@ -28,4 +32,3 @@ class Routes extends Component {
 }
 
 export default Routes
- 

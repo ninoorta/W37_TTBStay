@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link, withRouter} from 'react-router-dom'
 import '../../assets/img/dalat.png'
 import '../../assets/img/hanoi.png'
 import '../../assets/img/hochiminh.png'
@@ -148,7 +149,7 @@ class Home extends Component {
                             <h2 className="col-12 rooms__heading">Các homestay nổi bật tại TTBStay</h2>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                    <Link to="/detail" className="rooms__item-link">
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -175,7 +176,7 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
@@ -416,21 +417,9 @@ class Home extends Component {
                         </ul>
                     </div>
                 </section>
-                <footer className="footer">
-                    <div className="container container-md">
-                        <div className="row justify-content-center">
-                            <div className="col-xs-12 text-center">
-                                <p className="footer__text">
-                                    TTBStay by TTB Team.
-                            </p>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
-
             </div>
         )
     }
 }
 
-export default Home
+export default withRouter(Home)
