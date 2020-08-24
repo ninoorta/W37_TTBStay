@@ -24,7 +24,7 @@ class SignInForm extends Component {
                 password: password
             }
         }).then(res => {
-            if(res.data.familyName == undefined){
+            if (res.data.familyName == undefined) {
                 res.data.familyName = '';
             }
             let userName = res.data.familyName + " " + res.data.name
@@ -35,7 +35,7 @@ class SignInForm extends Component {
             this.props.history.push('/')
             console.log(this.state)
             localStorage.setItem('loggedIn', userName)
-            
+
             // document.getElementById("nav-right").innerHTML = "Welcome " + this.state.name
             // document.getElementById("nav-right").style.color = "#f65e39"
             // document.getElementById("nav-right").style.fontSize = "xx-large"
@@ -45,20 +45,22 @@ class SignInForm extends Component {
             console.log(err, err.response)
             let errMessage = err.response.data.message
             // If have email, put email-error display none
-            if(email && errMessage.indexOf("email") == -1){
+            if (email && errMessage.indexOf("email") == -1) {
                 document.getElementById("email-error").style.display = "none";
-            } else if(password && errMessage.indexOf("password") == -1){
+            }
+            if (password && errMessage.indexOf("password") == -1) {
                 document.getElementById("password-error").style.display = "none";
             }
             //  Else
-            if(!email){
+            if (!email) {
                 document.getElementById("email-error").innerHTML = errMessage
                 console.log(errMessage)
                 document.getElementById("email-error").style.display = "block";
-            } else if(!password){
-                document.getElementById("password-error").innerHTML = errMessage
-                document.getElementById("password-error").style.display = "block";
-            }
+            } else
+                if (!password) {
+                    document.getElementById("password-error").innerHTML = errMessage
+                    document.getElementById("password-error").style.display = "block";
+                }
 
         })
 
@@ -66,7 +68,7 @@ class SignInForm extends Component {
 
     }
 
-    
+
 
     render() {
         return (
@@ -94,7 +96,7 @@ class SignInForm extends Component {
                       <span className="input-item__password-header">(Tối thiểu 6 ký tự)</span>
                                 </label>
                                 <div className="input-item__wrapper">
-                                    <input type="password" placeholder="Mật khẩu" id="password" required="required"/>
+                                    <input type="password" placeholder="Mật khẩu" id="password" required="required" />
                                     <span>
                                         <i className="fas fa-lock" />
                                     </span>

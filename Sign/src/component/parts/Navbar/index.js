@@ -46,7 +46,7 @@ class Navbar extends Component {
                                 <li className="menu__list-item">
                                     {"Welcome " + localStorage.getItem("loggedIn")}
                                     <button className="btn btn-sign-out ml-2" onClick={() => this.logOut()}>
-                                        <i class="fas fa-sign-out-alt"></i>
+                                        <i className="fas fa-sign-out-alt"></i>
                                     </button>
                                 </li>
                             </ul>

@@ -13,12 +13,12 @@ const handlers = {
             let data = req.body
             let { email, password } = data
 
-            if (!email) {
-                throw new Error(`Missing 'email'!`)
+            if (!email || !validateEmail(email)) {
+                throw new Error(`Invalid 'email'!`)
             }
 
             if (!password) {
-                throw new Error(`Missing 'password'!`)
+                throw new Error(`Invalid 'password'!`)
             }
 
             let formattedEmail = String(email).trim().toLowerCase()
