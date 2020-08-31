@@ -1,9 +1,16 @@
 const express = require('express')
-const router = new express.Router()
+const router = new express.Router()     
 
 const authHandlers = require('./modules/auth')
 const productHandlers = require('./modules/product')
 const categoryHandlers = require('./modules/category')
+
+
+const path = require('path')
+
+const staticPath = path.resolve(__dirname, '../public')
+
+router.use('/', express.static(staticPath))
 
 // ________________________Auth___________________________
 

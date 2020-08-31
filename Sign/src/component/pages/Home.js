@@ -181,7 +181,8 @@ class Home extends Component {
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                <Link to="/detail" className="rooms__item-link">
+                                    {/* <a href="#" className="rooms__item-link"> */}
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -208,12 +209,13 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                <Link to="/detail" className="rooms__item-link">
+                                    {/* <a href="#" className="rooms__item-link"> */}
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -240,12 +242,13 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                <Link to="/detail" className="rooms__item-link">
+                                    {/* <a href="#" className="rooms__item-link"> */}
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -272,12 +275,13 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                <Link to="/detail" className="rooms__item-link">
+                                    {/* <a href="#" className="rooms__item-link"> */}
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -304,12 +308,13 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                <Link to="/detail" className="rooms__item-link">
+                                    {/* <a href="#" className="rooms__item-link"> */}
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -336,12 +341,13 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                <Link to="/detail" className="rooms__item-link">
+                                    {/* <a href="#" className="rooms__item-link"> */}
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -368,12 +374,13 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="col-lg-3 col-md-6 col-xs-12 mt-5 mb-2">
                                 <div className="rooms__item">
-                                    <a href="#" className="rooms__item-link">
+                                <Link to="/detail" className="rooms__item-link">
+                                    {/* <a href="#" className="rooms__item-link"> */}
                                         <div className="item-link__img">
                                             <img src="./assets/img/room1.jpg" alt="" />
                                         </div>
@@ -400,7 +407,7 @@ class Home extends Component {
                                                 Hai Bà Trưng, Hà Nội
                                             </div>
                                         </div>
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
+const { text } = require('body-parser')
 const ObjectId = mongoose.Types.ObjectId
 
 const schema = new mongoose.Schema({
+    
     name: {
         type: String,
         required: [true, `Yêu cầu 'name'!`],
@@ -36,6 +38,8 @@ const schema = new mongoose.Schema({
         required: [true, `Yêu cầu picture`]
         
     }
+
+    //thêm trường discountNmumber, roomNumber, diện tích
 })
 
 
